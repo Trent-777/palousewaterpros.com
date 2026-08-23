@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What's Wrong With My Water? — 2-Minute Quiz | Palouse Water Pros</title>
+<meta name="description" content="A free 2-minute quiz that helps you figure out what's likely going on with your well or city water in Moscow, Pullman, and the Palouse — iron, manganese, hardness, sulfur, or bacteria — and what to do next.">
+<link rel="canonical" href="https://palousewaterpros.com/water-quiz.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="What's Wrong With My Water? — Free 2-Minute Palouse Water Quiz">
+<meta property="og:description" content="Answer a few questions about your water's symptoms and get an honest read on what's likely causing them — from a local Moscow, Idaho water treatment pro.">
+<meta property="og:url" content="https://palousewaterpros.com/water-quiz.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#43569D; --blue-deep:#35447e; --green:#96BD36; --green-deep:#7ba024;
+  --grey:#36373A; --wheat:#F8F5EE; --wheat-deep:#EFE9DA; --white:#fff; --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',system-ui,sans-serif;color:var(--grey);background:var(--wheat);line-height:1.6;font-size:17px;min-height:100vh;display:flex;flex-direction:column}
+h1,h2,h3{font-family:'Nunito',sans-serif;line-height:1.2}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:6px}
+nav{position:sticky;top:0;z-index:50;background:rgba(248,245,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--wheat-deep)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1080px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-name{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.05rem;color:var(--grey);line-height:1.05}
+.brand-name span{display:block;font-size:.62rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--blue)}
+.nav-cta{font-family:'Nunito',sans-serif;font-weight:700;font-size:.92rem;background:var(--blue);color:#fff;padding:9px 18px;border-radius:999px;text-decoration:none}
+main{flex:1;max-width:640px;width:100%;margin:0 auto;padding:44px 24px 64px}
+.eyebrow{font-family:'Nunito',sans-serif;font-weight:800;font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;color:var(--green-deep);display:block;margin-bottom:.5rem}
+h1{font-weight:900;font-size:clamp(1.7rem,4.5vw,2.3rem);letter-spacing:-.02em;margin-bottom:.6rem}
+.intro{margin-bottom:1.8rem;color:#4a4b4f}
+.progress{height:8px;background:var(--wheat-deep);border-radius:99px;margin-bottom:2rem;overflow:hidden}
+.progress-fill{height:100%;background:var(--green);border-radius:99px;width:0%;transition:width .25s ease}
+@media (prefers-reduced-motion: reduce){.progress-fill{transition:none}}
+.q-title{font-weight:800;font-size:1.3rem;margin-bottom:.4rem}
+.q-hint{font-size:.95rem;color:#6a6b6f;margin-bottom:1.2rem}
+.opts{display:grid;gap:12px}
+.opt{
+  text-align:left;font-family:'Source Sans 3',sans-serif;font-size:1.02rem;color:var(--grey);
+  background:var(--white);border:2px solid var(--wheat-deep);border-radius:var(--radius);
+  padding:15px 18px;cursor:pointer;transition:border-color .12s ease, transform .12s ease;
+  display:flex;align-items:center;gap:12px;
+}
+.opt:hover{border-color:var(--blue);transform:translateY(-1px)}
+.opt.selected{border-color:var(--blue);background:#eef1fb}
+.opt .box{flex:none;width:22px;height:22px;border-radius:6px;border:2px solid #b9bcc4;display:flex;align-items:center;justify-content:center;background:#fff}
+.opt.selected .box{background:var(--blue);border-color:var(--blue)}
+.opt.selected .box::after{content:"✓";color:#fff;font-weight:800;font-size:.85rem}
+.opt.radio .box{border-radius:50%}
+.btn-row{display:flex;gap:12px;margin-top:1.6rem;flex-wrap:wrap}
+.btn{
+  display:inline-block;font-family:'Nunito',sans-serif;font-weight:800;font-size:1rem;
+  padding:13px 28px;border-radius:999px;text-decoration:none;border:none;cursor:pointer;
+}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:var(--blue-deep)}
+.btn-primary:disabled{background:#b9bcc4;cursor:not-allowed}
+.btn-back{background:none;border:2px solid var(--wheat-deep);color:#6a6b6f}
+.btn-back:hover{border-color:var(--grey);color:var(--grey)}
+.btn-green{background:var(--green);color:#243014}
+.btn-green:hover{background:#a7cc4d}
+.hidden{display:none}
+.result-card{background:var(--white);border-radius:18px;padding:28px 26px;box-shadow:0 8px 30px rgba(54,55,58,.09);margin-bottom:16px;border-top:6px solid var(--blue)}
+.result-card.likely{border-top-color:var(--green)}
+.result-card h3{font-size:1.15rem;margin-bottom:.4rem}
+.tag{display:inline-block;font-family:'Nunito',sans-serif;font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;padding:4px 10px;border-radius:99px;margin-bottom:.7rem}
+.tag.likely{background:#eaf3d2;color:#4d661a}
+.tag.possible{background:#e8ebf7;color:var(--blue-deep)}
+.result-card p{font-size:.98rem;color:#4a4b4f}
+.next-band{background:var(--blue);border-radius:18px;padding:30px 26px;color:#fff;margin-top:1.6rem}
+.next-band h2{color:#fff;font-size:1.35rem;margin-bottom:.5rem}
+.next-band p{color:rgba(255,255,255,.92);margin-bottom:1.2rem;font-size:.98rem}
+.disclaimer{font-size:.85rem;color:#8a8b90;margin-top:1.6rem}
+footer{background:var(--grey);color:#cfd0d3;padding:26px 24px;font-size:.9rem;text-align:center}
+footer a{color:#fff}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="Palouse Water Pros home">
+      <svg width="44" height="40" viewBox="0 0 44 40" aria-hidden="true">
+        <path d="M0 34 Q 14 24 26 30 T 44 28 L 44 40 L 0 40 Z" fill="#96BD36"/>
+        <path d="M14 4 C 14 4 8 12 8 16.5 A 6 6 0 0 0 20 16.5 C 20 12 14 4 14 4 Z" fill="#43569D"/>
+        <path d="M30 10 C 30 10 25.2 16.4 25.2 20 A 4.8 4.8 0 0 0 34.8 20 C 34.8 16.4 30 10 30 10 Z" fill="#43569D" opacity=".82"/>
+      </svg>
+      <span class="brand-name">Palouse Water Pros<span>Moscow · Idaho</span></span>
+    </a>
+    <a class="nav-cta" href="index.html#contact">Contact Me</a>
+  </div>
+</nav>
+
+<main>
+  <span class="eyebrow">Free 2-Minute Quiz</span>
+  <h1>What's wrong with my water?</h1>
+  <p class="intro">Answer a few questions about what you're seeing, tasting, and smelling. You'll get an honest read on what's likely going on — no email required, no sales pitch.</p>
+
+  <div class="progress" aria-hidden="true"><div class="progress-fill" id="bar"></div></div>
+
+  <div id="quiz"></div>
+
+  <div id="results" class="hidden" aria-live="polite"></div>
+</main>
+
+<footer>
+  <p><a href="index.html">Palouse Water Pros</a> · Moscow, Idaho · <a href="palouse-well-water-guide.html">Palouse Well Water Guide</a><br>© 2026 Palouse Water Pros</p>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+var PHONE_DISPLAY = "(208) 883-4444";
+var PHONE_TEL = "+19494566889";
+var PHONE_SMS = "+19494566889";
+
+var state = { answers: {} };
+
+var QUESTIONS = [
+  {
+    id: "source", type: "radio",
+    title: "Where does your water come from?",
+    hint: "This changes everything about likely causes.",
+    options: [
+      {v:"well",  label:"A private well"},
+      {v:"city",  label:"City / municipal water"},
+      {v:"unsure",label:"Not sure"}
+    ]
+  },
+  {
+    id: "area", type: "radio",
+    title: "Where's the property?",
+    hint: "Water patterns differ across the region.",
+    options: [
+      {v:"Moscow", label:"Moscow / Viola area"},
+      {v:"Pullman", label:"Pullman / Whitman County"},
+      {v:"Troy-Deary", label:"Troy / Deary / Bovill area"},
+      {v:"Princeton-Potlatch", label:"Princeton / Potlatch / Harvard area"},
+      {v:"Genesee-Juliaetta", label:"Genesee / Juliaetta / Kendrick area"},
+      {v:"Other", label:"Somewhere else on the Palouse"}
+    ]
+  },
+  {
+    id: "symptoms", type: "multi",
+    title: "What are you noticing?",
+    hint: "Select everything that applies.",
+    options: [
+      {v:"orange",  label:"Orange or rust-red stains (toilets, tubs, fixtures)"},
+      {v:"black",   label:"Black or dark slime/stains (toilet tank, aerators)"},
+      {v:"scale",   label:"White scale or crusty buildup on fixtures"},
+      {v:"spots",   label:"Spots on dishes and glassware"},
+      {v:"dryskin", label:"Dry skin and hair, soap won't lather"},
+      {v:"metal",   label:"Metallic taste"},
+      {v:"egg",     label:"Rotten-egg smell"},
+      {v:"chlorine",label:"Chlorine taste or smell"},
+      {v:"cloudy",  label:"Cloudy, dingy, or off-tasting water"},
+      {v:"laundry", label:"Laundry looks dull or stained"},
+      {v:"none",    label:"Nothing yet — new build, or buying a home"}
+    ]
+  },
+  {
+    id: "bacteria", type: "radio", showIf: function(a){ return a.source !== "city"; },
+    title: "Has the well ever tested positive for coliform bacteria?",
+    hint: "Common on Palouse wells — worth knowing either way.",
+    options: [
+      {v:"yes",   label:"Yes, at some point"},
+      {v:"no",    label:"No — it's been tested and was clean"},
+      {v:"never", label:"It's never been tested (or I don't know)"}
+    ]
+  },
+  {
+    id: "situation", type: "radio",
+    title: "What's your situation?",
+    options: [
+      {v:"existing", label:"Existing home — living with the problem now"},
+      {v:"buying",   label:"Buying a home (inspection / closing)"},
+      {v:"newbuild", label:"New construction or major remodel"},
+      {v:"failed",   label:"I have equipment already but it isn't working"}
+    ]
+  }
+];
+
+function visibleQuestions(){
+  return QUESTIONS.filter(function(q){ return !q.showIf || q.showIf(state.answers); });
+}
+
+var stepIndex = 0;
+
+function render(){
+  var qs = visibleQuestions();
+  var quiz = document.getElementById("quiz");
+  var bar = document.getElementById("bar");
+  bar.style.width = Math.round((stepIndex / qs.length) * 100) + "%";
+
+  if (stepIndex >= qs.length){ showResults(); return; }
+
+  var q = qs[stepIndex];
+  var cur = state.answers[q.id];
+  var html = '<h2 class="q-title">' + q.title + '</h2>';
+  if (q.hint) html += '<p class="q-hint">' + q.hint + '</p>';
+  html += '<div class="opts" role="group" aria-label="' + q.title + '">';
+  q.options.forEach(function(o){
+    var sel = q.type === "multi"
+      ? (Array.isArray(cur) && cur.indexOf(o.v) !== -1)
+      : (cur === o.v);
+    html += '<button type="button" class="opt ' + (q.type==="radio"?"radio ":"") + (sel?"selected":"") +
+            '" data-v="' + o.v + '" aria-pressed="' + sel + '"><span class="box" aria-hidden="true"></span><span>' + o.label + '</span></button>';
+  });
+  html += '</div><div class="btn-row">';
+  if (stepIndex > 0) html += '<button type="button" class="btn btn-back" id="back">Back</button>';
+  html += '<button type="button" class="btn btn-primary" id="next" ' + (isAnswered(q)?"":"disabled") + '>Next</button></div>';
+  quiz.innerHTML = html;
+
+  quiz.querySelectorAll(".opt").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var v = btn.getAttribute("data-v");
+      if (q.type === "multi"){
+        var arr = Array.isArray(state.answers[q.id]) ? state.answers[q.id].slice() : [];
+        if (v === "none"){ arr = arr.indexOf("none") !== -1 ? [] : ["none"]; }
+        else {
+          var i = arr.indexOf(v);
+          if (i !== -1) arr.splice(i,1); else arr.push(v);
+          var n = arr.indexOf("none"); if (n !== -1) arr.splice(n,1);
+        }
+        state.answers[q.id] = arr;
+      } else {
+        state.answers[q.id] = v;
+      }
+      render();
+    });
+  });
+  var next = document.getElementById("next");
+  if (next) next.addEventListener("click", function(){ stepIndex++; render(); window.scrollTo({top:0}); });
+  var back = document.getElementById("back");
+  if (back) back.addEventListener("click", function(){ stepIndex--; render(); });
+}
+
+function isAnswered(q){
+  var a = state.answers[q.id];
+  if (q.type === "multi") return Array.isArray(a) && a.length > 0;
+  return !!a;
+}
+
+function has(sym){ var s = state.answers.symptoms || []; return s.indexOf(sym) !== -1; }
+
+function buildFindings(){
+  var f = [];
+  var src = state.answers.source;
+
+  if (has("orange") && has("black")){
+    f.push({level:"likely", title:"Iron + manganese together — the classic Palouse combination",
+      text:"Orange-red staining points to iron; black slime and dark staining point to manganese. On wells around here they usually travel together, dissolved out of the basalt aquifer. Important: manganese is harder to remove than iron, and many standard \u201ciron filters\u201d leave it behind — which is why treatment needs to be designed around your actual numbers, not a catalog."});
+  } else if (has("orange") || has("metal")){
+    f.push({level:"likely", title:"Iron",
+      text:"Rust-colored staining" + (has("metal") ? " and a metallic taste" : "") + " are the signature of iron, extremely common in Palouse well water. The right removal method depends on how much there is and whether it's dissolved or already oxidized — an on-site test tells us in minutes."});
+  } else if (has("black")){
+    f.push({level:"likely", title:"Manganese",
+      text:"Black or dark-brown slime in the toilet tank and on aerators is manganese. It stains at levels far lower than iron does, it's harder to remove, and it defeats a lot of off-the-shelf equipment at typical Palouse pH. This one is worth getting the numbers on before buying anything."});
+  }
+
+  if (has("scale") || has("spots") || has("dryskin") || has("laundry")){
+    f.push({level:"likely", title:"Hard water",
+      text:"Scale buildup, spotted dishes, dry skin and hair, and dull laundry all point to hardness — calcium and magnesium. It's very common across the Palouse on both well and city water. A properly configured softener solves it; on wells with iron and manganese present, the softener design has to account for the metals too."});
+  }
+
+  if (has("egg")){
+    f.push({level:"likely", title:"Hydrogen sulfide (sulfur)",
+      text:"The rotten-egg smell is hydrogen sulfide gas. First question: is it in cold water everywhere (source problem) or only in hot water (often the water heater's anode rod reacting)? That one distinction changes the fix completely — it's one of the first things I check."});
+  }
+
+  if (has("chlorine")){
+    if (src === "city"){
+      f.push({level:"likely", title:"Chlorine disinfection byproducts",
+        text:"City water in this area is chlorinated. If the taste bothers you, the fix is straightforward: correctly sized carbon filtration — whole-house or at the tap — removes chlorine taste and odor reliably."});
+    } else {
+      f.push({level:"possible", title:"Chlorine smell on a well",
+        text:"A chlorine smell on a private well usually means the well was shocked recently or there's a chlorinator upstream. Worth a conversation — it affects what else is going on."});
+    }
+  }
+
+  if (has("cloudy")){
+    f.push({level:"possible", title:"Sediment, air, or organics",
+      text:"Cloudy water can be harmless dissolved air, or it can be sediment or organics — tannin-tinted water is common on some Palouse wells and can defeat standard iron filters if it's not accounted for. A glass test (does it clear from the bottom up?) plus an on-site check sorts this quickly."});
+  }
+
+  if (state.answers.bacteria === "yes"){
+    f.push({level:"likely", title:"Bacteria risk — design around it",
+      text:"A past positive coliform test matters even if a retest came back clean. It usually means surface water can find a path into the well. Any treatment plan should account for disinfection from the start rather than bolting it on later."});
+  } else if (state.answers.bacteria === "never" && src !== "city"){
+    f.push({level:"possible", title:"Never-tested well",
+      text:"Coliform bacteria is one of the most common findings on Palouse wells — and it's invisible, tasteless, and odorless. A bacteria test should be part of step one regardless of what else we treat."});
+  }
+
+  if (has("none") || state.answers.situation === "newbuild"){
+    f.push({level:"likely", title:"Right time to plan, not react",
+      text:"Getting water treatment planned before drywall (or before closing) is the cheapest it will ever be. We test what the water actually contains, plan the utility space, and design the system so you start with great water from day one — my favorite kind of project."});
+  }
+
+  if (state.answers.situation === "buying"){
+    f.push({level:"possible", title:"Buying a home — get numbers before you close",
+      text:"A basic realtor test often skips manganese, pH, and tannins entirely. A full picture of the water before closing gives you negotiating leverage and a real budget for treatment — I can usually turn this around fast for a closing timeline."});
+  }
+
+  if (state.answers.situation === "failed"){
+    f.push({level:"possible", title:"Existing equipment underperforming",
+      text:"Very common story here: equipment that was sold for \u201ciron\u201d but never sized for manganese, tannins, or the actual pH. Sometimes it's fixable with reprogramming or a media change; sometimes it's the wrong tool. I'll give you a straight answer either way — including when the existing gear is worth keeping."});
+  }
+
+  if (f.length === 0){
+    f.push({level:"possible", title:"Nothing obvious from symptoms alone",
+      text:"No strong pattern from what you selected — which is actually useful information. The next step is a proper on-site test so we're working from numbers instead of guesses."});
+  }
+  return f;
+}
+
+function labelFor(id, v){
+  var q = QUESTIONS.filter(function(x){return x.id===id;})[0];
+  if (!q) return v;
+  var o = q.options.filter(function(x){return x.v===v;})[0];
+  return o ? o.label : v;
+}
+
+function buildSmsBody(){
+  var a = state.answers;
+  var lines = ["Hi Trent — I took the water quiz on your site."];
+  lines.push("Source: " + labelFor("source", a.source));
+  lines.push("Area: " + labelFor("area", a.area));
+  var syms = (a.symptoms||[]).map(function(v){ return labelFor("symptoms", v); });
+  if (syms.length) lines.push("Noticing: " + syms.join("; "));
+  if (a.bacteria) lines.push("Bacteria history: " + labelFor("bacteria", a.bacteria));
+  lines.push("Situation: " + labelFor("situation", a.situation));
+  lines.push("Can you help?");
+  return lines.join("\n");
+}
+
+function showResults(){
+  document.getElementById("bar").style.width = "100%";
+  document.getElementById("quiz").classList.add("hidden");
+  var findings = buildFindings();
+  var html = '<h2 class="q-title" style="margin-bottom:1rem">Here\u2019s what your answers suggest</h2>';
+  findings.forEach(function(fd){
+    html += '<div class="result-card ' + fd.level + '">' +
+      '<span class="tag ' + fd.level + '">' + (fd.level === "likely" ? "Likely" : "Worth checking") + '</span>' +
+      '<h3>' + fd.title + '</h3><p>' + fd.text + '</p></div>';
+  });
+  var sms = "sms:" + PHONE_SMS + "?&body=" + encodeURIComponent(buildSmsBody());
+  html += '<div class="next-band"><h2>Want the real numbers?</h2>' +
+    '<p>Symptoms narrow it down — an on-site test confirms it. I\u2019ll test your water in front of you and give you a straight answer, even if the answer is \u201cyou need less than you think.\u201d</p>' +
+    '<div class="btn-row">' +
+    '<a class="btn btn-green" href="' + sms + '">Text my quiz results to Trent</a>' +
+    '<a class="btn btn-primary" style="border:2px solid rgba(255,255,255,.5)" href="tel:' + PHONE_TEL + '">Call ' + PHONE_DISPLAY + '</a>' +
+    '</div></div>' +
+    '<p class="disclaimer">This quiz gives a likely read based on common Palouse water patterns — it isn\u2019t a lab test. Actual treatment recommendations always follow real testing. <a href="palouse-well-water-guide.html">Read the full Palouse well water guide \u2192</a></p>' +
+    '<div class="btn-row"><button type="button" class="btn btn-back" id="restart">Start over</button></div>';
+  var res = document.getElementById("results");
+  res.innerHTML = html;
+  res.classList.remove("hidden");
+  document.getElementById("restart").addEventListener("click", function(){
+    state.answers = {}; stepIndex = 0;
+    res.classList.add("hidden");
+    document.getElementById("quiz").classList.remove("hidden");
+    render(); window.scrollTo({top:0});
+  });
+}
+
+render();
+})();
+</script>
+</body>
+</html>

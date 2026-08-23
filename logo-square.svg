@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Palouse Water Pros">
+  <defs>
+    <style>
+      .word{font-family:'Nunito','Trebuchet MS',sans-serif;font-weight:900;fill:#36373A;font-size:40px;letter-spacing:-.5px;text-anchor:middle}
+      .sub{font-family:'Nunito','Trebuchet MS',sans-serif;font-weight:800;fill:#43569D;font-size:15px;letter-spacing:6px;text-anchor:middle}
+    </style>
+  </defs>
+  <rect width="400" height="400" fill="#F8F5EE"/>
+  <!-- Mark centered -->
+  <g transform="translate(118,52)">
+    <path d="M0 128 Q 42 96 84 112 T 164 104 L 164 144 L 0 144 Z" fill="#96BD36"/>
+    <path d="M52 8 C 52 8 30 38 30 55 A 22 22 0 0 0 74 55 C 74 38 52 8 52 8 Z" fill="#43569D"/>
+    <path d="M112 32 C 112 32 95 55 95 68 A 17 17 0 0 0 129 68 C 129 55 112 32 112 32 Z" fill="#43569D" opacity=".82"/>
+  </g>
+  <text x="200" y="278" class="word">Palouse</text>
+  <text x="200" y="322" class="word">Water Pros</text>
+  <text x="200" y="358" class="sub">MOSCOW · IDAHO</text>
+</svg>
