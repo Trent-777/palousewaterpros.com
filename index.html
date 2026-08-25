@@ -113,7 +113,27 @@ nav{
 .nav-links a:hover{color:var(--blue)}
 .nav-cta{background:var(--blue);color:#fff!important;padding:9px 18px;border-radius:999px}
 .nav-cta:hover{background:var(--blue-deep);color:#fff}
-@media(max-width:760px){.nav-links li:not(.cta-li){display:none}}
+.nav-toggle{
+  display:none;background:none;border:0;padding:9px;cursor:pointer;
+  border-radius:9px;color:var(--grey);line-height:0;
+}
+.nav-toggle:hover{background:var(--wheat-deep)}
+@media(max-width:760px){
+  .nav-toggle{display:flex;align-items:center;justify-content:center}
+  .nav-links{
+    display:none;
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:var(--wheat);
+    border-bottom:1px solid var(--wheat-deep);
+    padding:6px 0 16px;
+    box-shadow:0 12px 26px rgba(54,55,58,.11);
+  }
+  .nav-links.open{display:flex}
+  .nav-links li{display:block}
+  .nav-links a{display:block;padding:14px 24px;font-size:1.04rem}
+  .nav-links .nav-cta{margin:10px 24px 0;text-align:center;padding:13px 18px}
+}
 
 /* ---------- Hero ---------- */
 header.hero{
@@ -286,13 +306,18 @@ footer a{color:#fff}
       </svg>
       <span class="brand-name">Palouse Water Pros<span>Moscow · Idaho</span></span>
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#how">How I Work</a></li>
       <li><a href="palouse-well-water-guide.html">Well Water Guide</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li class="cta-li"><a class="nav-cta" href="#contact">Contact Me</a></li>
     </ul>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+    </button>
   </div>
 </nav>
 
@@ -524,6 +549,28 @@ footer a{color:#fff}
   <a class="ab-call" href="tel:+12088834444">Call Trent</a>
   <a class="ab-text" href="sms:+19494566889">Text Trent</a>
 </div>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var menu = document.getElementById('nav-links');
+  if (!btn || !menu) return;
+  function setOpen(open){
+    menu.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  btn.addEventListener('click', function(){
+    setOpen(!menu.classList.contains('open'));
+  });
+  menu.addEventListener('click', function(e){
+    if (e.target.closest('a')) setOpen(false);
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') setOpen(false);
+  });
+})();
+</script>
 
 </body>
 </html>
