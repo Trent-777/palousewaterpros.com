@@ -314,6 +314,11 @@ function buildFindings(){
       text:"Very common story here: equipment that was sold for \u201ciron\u201d but never sized for manganese, tannins, or the actual pH. Sometimes it's fixable with reprogramming or a media change; sometimes it's the wrong tool. I'll give you a straight answer either way — including when the existing gear is worth keeping."});
   }
 
+  if (state.answers.area === "Princeton-Potlatch" && src !== "city"){
+    f.push({level:"possible", title:"Highway 6 corridor well — expect manganese and tannins",
+      text:"Wells around Princeton, Potlatch, and Harvard sit where Palouse loess meets timbered mountain ground, and manganese, tannins, and coliform show up more often there than closer to Moscow. I work this corridor regularly. <a href=\"princeton-potlatch-water-treatment.html\">Read what I typically find on Princeton–Potlatch wells →</a>"});
+  }
+
   if (f.length === 0){
     f.push({level:"possible", title:"Nothing obvious from symptoms alone",
       text:"No strong pattern from what you selected — which is actually useful information. The next step is a proper on-site test so we're working from numbers instead of guesses."});
