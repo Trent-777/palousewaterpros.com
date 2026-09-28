@@ -4,9 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>What's Wrong With My Water? — 2-Minute Quiz | Palouse Water Pros</title>
-<meta name="description" content="A free 2-minute quiz that helps you figure out what's likely going on with your well or city water in Moscow, Latah County, and the Palouse — iron, manganese, hardness, sulfur, or bacteria — and what to do next.">
+<meta name="description" content="Free 2-minute quiz: find out what's likely wrong with your well or city water in Moscow and the Palouse — iron, manganese, hardness, sulfur, or bacteria.">
 <link rel="canonical" href="https://palousewaterpros.com/water-quiz.html">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://palousewaterpros.com/logo-horizontal-1200.png">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:title" content="What's Wrong With My Water? — Free 2-Minute Palouse Water Quiz">
 <meta property="og:description" content="Answer a few questions about your water's symptoms and get an honest read on what's likely causing them — from a local Moscow, Idaho water treatment pro.">
 <meta property="og:url" content="https://palousewaterpros.com/water-quiz.html">
@@ -77,7 +80,7 @@ h1{font-weight:900;font-size:clamp(1.7rem,4.5vw,2.3rem);letter-spacing:-.02em;ma
 .next-band{background:var(--blue);border-radius:18px;padding:30px 26px;color:#fff;margin-top:1.6rem}
 .next-band h2{color:#fff;font-size:1.35rem;margin-bottom:.5rem}
 .next-band p{color:rgba(255,255,255,.92);margin-bottom:1.2rem;font-size:.98rem}
-.disclaimer{font-size:.85rem;color:#8a8b90;margin-top:1.6rem}
+.disclaimer{font-size:.85rem;color:#6a6b6f;margin-top:1.6rem}
 footer{background:var(--grey);color:#cfd0d3;padding:26px 24px;font-size:.9rem;text-align:center}
 footer a{color:#fff}
 </style>
@@ -111,7 +114,7 @@ footer a{color:#fff}
 </main>
 
 <footer>
-  <p><a href="index.html">Palouse Water Pros</a> · Moscow, Idaho · <a href="palouse-well-water-guide.html">Palouse Well Water Guide</a><br>© 2026 Palouse Water Pros</p>
+  <p><a href="index.html">Palouse Water Pros</a> · Moscow, Idaho · <a href="palouse-well-water-guide.html">Palouse Well Water Guide</a> · <a href="faq.html">FAQ</a><br><a href="moscow-city-water-treatment.html">Moscow</a> · <a href="troy-deary-bovill-water-treatment.html">Troy, Deary &amp; Bovill</a> · <a href="genesee-water-treatment.html">Genesee</a> · <a href="kendrick-juliaetta-water-treatment.html">Kendrick &amp; Juliaetta</a> · <a href="princeton-potlatch-water-treatment.html">Princeton, Potlatch &amp; Harvard</a><br>© 2026 Palouse Water Pros</p>
 </footer>
 
 <script>
@@ -119,10 +122,12 @@ footer a{color:#fff}
 "use strict";
 
 var PHONE_DISPLAY = "(208) 883-4444";
-var PHONE_TEL = "+19494566889";
+var PHONE_TEL = "+12088834444";
 var PHONE_SMS = "+19494566889";
 
 var state = { answers: {} };
+var lastClicked = null;
+var stepFocus = false;
 
 var QUESTIONS = [
   {
@@ -141,7 +146,7 @@ var QUESTIONS = [
     hint: "Water patterns differ across the region.",
     options: [
       {v:"Moscow", label:"Moscow / Viola area"},
-      {v:"Pullman", label:"Pullman / Whitman County"},
+      {v:"Pullman", label:"Pullman / Washington side"},
       {v:"Troy-Deary", label:"Troy / Deary / Bovill area"},
       {v:"Princeton-Potlatch", label:"Princeton / Potlatch / Harvard area"},
       {v:"Genesee-Juliaetta", label:"Genesee / Juliaetta / Kendrick area"},
@@ -218,10 +223,21 @@ function render(){
   if (stepIndex > 0) html += '<button type="button" class="btn btn-back" id="back">Back</button>';
   html += '<button type="button" class="btn btn-primary" id="next" ' + (isAnswered(q)?"":"disabled") + '>Next</button></div>';
   quiz.innerHTML = html;
+  var title = quiz.querySelector(".q-title");
+  if (title){ title.setAttribute("tabindex", "-1"); }
+  if (lastClicked){
+    var again = quiz.querySelector('[data-v="' + lastClicked + '"]');
+    if (again) again.focus();
+    lastClicked = null;
+  } else if (stepFocus && title){
+    title.focus({preventScroll:true});
+    stepFocus = false;
+  }
 
   quiz.querySelectorAll(".opt").forEach(function(btn){
     btn.addEventListener("click", function(){
       var v = btn.getAttribute("data-v");
+      lastClicked = v;
       if (q.type === "multi"){
         var arr = Array.isArray(state.answers[q.id]) ? state.answers[q.id].slice() : [];
         if (v === "none"){ arr = arr.indexOf("none") !== -1 ? [] : ["none"]; }
@@ -238,9 +254,9 @@ function render(){
     });
   });
   var next = document.getElementById("next");
-  if (next) next.addEventListener("click", function(){ stepIndex++; render(); window.scrollTo({top:0}); });
+  if (next) next.addEventListener("click", function(){ stepIndex++; stepFocus = true; render(); window.scrollTo({top:0}); });
   var back = document.getElementById("back");
-  if (back) back.addEventListener("click", function(){ stepIndex--; render(); });
+  if (back) back.addEventListener("click", function(){ stepIndex--; stepFocus = true; render(); });
 }
 
 function isAnswered(q){
@@ -319,6 +335,26 @@ function buildFindings(){
       text:"Wells around Princeton, Potlatch, and Harvard sit where Palouse loess meets timbered mountain ground, and manganese, tannins, and coliform show up more often there than closer to Moscow. I work this corridor regularly. <a href=\"princeton-potlatch-water-treatment.html\">Read what I typically find on Princeton–Potlatch wells →</a>"});
   }
 
+  if (state.answers.area === "Troy-Deary" && src !== "city"){
+    f.push({level:"possible", title:"Highway 8 corridor well — timber-country water",
+      text:"East of Moscow the ground shifts from Palouse farmland to timber, and wells around Troy, Deary, and Bovill can look very different a few miles apart. <a href=\"troy-deary-bovill-water-treatment.html\">Read what I typically find on Highway 8 wells →</a>"});
+  }
+
+  if (state.answers.area === "Genesee-Juliaetta"){
+    f.push({level:"possible", title:"South Latah County — farm country and canyon wells",
+      text:"Genesee sits in dryland farm country, and Kendrick and Juliaetta are down in the Potlatch River canyon. I've written up both: <a href=\"genesee-water-treatment.html\">Genesee</a> and <a href=\"kendrick-juliaetta-water-treatment.html\">Kendrick &amp; Juliaetta</a>."});
+  }
+
+  if (state.answers.area === "Moscow" && src === "city"){
+    f.push({level:"possible", title:"Moscow city water — usually a simpler job",
+      text:"City water is disinfected and regulated, but it isn't softened. Most in-town jobs come down to a correctly sized softener, sometimes with reverse osmosis at the kitchen sink. <a href=\"moscow-city-water-treatment.html\">Read the Moscow city water page →</a>"});
+  }
+
+  if (state.answers.area === "Pullman"){
+    f.push({level:"possible", title:"Outside my regular service area",
+      text:"I focus on Latah County and the Idaho side of the Palouse. If you're on the Washington side, <a href=\"sms:+19494566889\">text me your address</a> and I'll tell you straight whether I can help or point you elsewhere."});
+  }
+
   if (f.length === 0){
     f.push({level:"possible", title:"Nothing obvious from symptoms alone",
       text:"No strong pattern from what you selected — which is actually useful information. The next step is a proper on-site test so we're working from numbers instead of guesses."});
@@ -368,11 +404,13 @@ function showResults(){
   var res = document.getElementById("results");
   res.innerHTML = html;
   res.classList.remove("hidden");
+  var rh = res.querySelector(".q-title");
+  if (rh){ rh.setAttribute("tabindex", "-1"); rh.focus({preventScroll:true}); }
   document.getElementById("restart").addEventListener("click", function(){
     state.answers = {}; stepIndex = 0;
     res.classList.add("hidden");
     document.getElementById("quiz").classList.remove("hidden");
-    render(); window.scrollTo({top:0});
+    stepFocus = true; render(); window.scrollTo({top:0});
   });
 }
 

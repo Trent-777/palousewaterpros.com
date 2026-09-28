@@ -13,7 +13,12 @@
 ## Service area
 - Based in Moscow, Idaho; serves Latah County and the Idaho side of the Palouse
 - Towns served: Moscow, Viola, Troy, Deary, Bovill, Genesee, Kendrick, Juliaetta, Potlatch, Princeton, Harvard
-- Dedicated page for the Highway 6 corridor (Princeton, Potlatch, Harvard): https://palousewaterpros.com/princeton-potlatch-water-treatment.html
+- Service-area pages:
+  - Moscow city water and Viola: https://palousewaterpros.com/moscow-city-water-treatment.html
+  - Troy, Deary, Bovill, Helmer (Highway 8): https://palousewaterpros.com/troy-deary-bovill-water-treatment.html
+  - Genesee and south Latah County: https://palousewaterpros.com/genesee-water-treatment.html
+  - Kendrick and Juliaetta (Potlatch River canyon): https://palousewaterpros.com/kendrick-juliaetta-water-treatment.html
+  - Princeton, Potlatch, Harvard (Highway 6): https://palousewaterpros.com/princeton-potlatch-water-treatment.html
 
 ## Key facts
 - Owner-operated; the owner personally tests water on-site, designs the system, and performs the installation
@@ -23,7 +28,20 @@
 - Contact: call (208) 883-4444; text (949) 456-6889
 
 ## Pages
-- [Home / Services / Service Area / FAQ / Contact](https://palousewaterpros.com/)
-- [Water Treatment in Princeton, Potlatch & Harvard, Idaho](https://palousewaterpros.com/princeton-potlatch-water-treatment.html)
+- [Home / Services / Service Area / Contact](https://palousewaterpros.com/)
+- [FAQ: water treatment questions answered](https://palousewaterpros.com/faq.html)
 - [Palouse Well Water Guide: iron, manganese, and hardness explained](https://palousewaterpros.com/palouse-well-water-guide.html)
 - [What's Wrong With My Water? 2-minute quiz](https://palousewaterpros.com/water-quiz.html)
+
+### Services and problems
+- [Iron and manganese removal systems, Moscow, Idaho](https://palousewaterpros.com/iron-manganese-removal-moscow-idaho.html)
+- [Water softener installation, Moscow, Idaho](https://palousewaterpros.com/water-softener-moscow-idaho.html)
+- [Reverse osmosis drinking water systems, Moscow, Idaho](https://palousewaterpros.com/reverse-osmosis-drinking-water-moscow-idaho.html)
+- [Sulfur / rotten-egg smell in well water](https://palousewaterpros.com/sulfur-smell-well-water-moscow-idaho.html)
+
+### Service areas
+- [Moscow city water and Viola](https://palousewaterpros.com/moscow-city-water-treatment.html)
+- [Troy, Deary, Bovill and Helmer](https://palousewaterpros.com/troy-deary-bovill-water-treatment.html)
+- [Genesee](https://palousewaterpros.com/genesee-water-treatment.html)
+- [Kendrick and Juliaetta](https://palousewaterpros.com/kendrick-juliaetta-water-treatment.html)
+- [Princeton, Potlatch and Harvard](https://palousewaterpros.com/princeton-potlatch-water-treatment.html)
