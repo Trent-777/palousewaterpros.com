@@ -45,6 +45,8 @@ FAMILY = {
     "well-tested-positive-for-coliform-what-to-do.html": "article",
     "water-softener-salt-guide.html": "article",
     "new-construction-water-system-planning.html": "article",
+    "privacy.html": "article",
+    "terms.html": "article",
     # index.html and water-quiz.html have their own CSS.
 }
 
