@@ -30,7 +30,7 @@
 ## Pages
 - [Home / Services / Service Area / Contact](https://palousewaterpros.com/)
 - [FAQ: water treatment questions answered](https://palousewaterpros.com/faq.html)
-- [Well log lookup for Latah County: the state's driller's reports recorded near an address, matched to the property's deeds, no owner names shown](https://palousewaterpros.com/well-log-finder.html)
+- [Well log lookup for Latah County: the state's driller's reports recorded near an address, each with the name on the log, matched to the property's deeds; never today's owner from county records](https://palousewaterpros.com/well-log-finder.html)
 - [Palouse Well Water Guide: iron, manganese, and hardness explained](https://palousewaterpros.com/palouse-well-water-guide.html)
 - [What's Wrong With My Water? 2-minute quiz](https://palousewaterpros.com/water-quiz.html)
 
