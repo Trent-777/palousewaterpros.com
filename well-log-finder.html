@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!-- WELL_FINDER_HOST = https://frigone-well-finder.backup-receiver.workers.dev/ : a PLACEHOLDER. It is the live Worker's own address, which answers only after the build brief's live steps. The site's DNS is at Porkbun, so a subdomain such as wells.palousewaterpros.com would need the zone moved to Cloudflare first. The host appears once below, on the "Open the well log lookup" button; change it there. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Well Log Lookup for Latah County, Idaho | Palouse Water Pros</title>
+<meta name="description" content="Find the state's well driller's report for a Latah County, Idaho property: the wells recorded near an address, and the deed records matched to the right log.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="canonical" href="https://palousewaterpros.com/well-log-finder.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://palousewaterpros.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://palousewaterpros.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="Well Log Lookup for Latah County, Idaho | Palouse Water Pros">
+<meta property="og:description" content="Type a Latah County address to see the wells the state has recorded near it, with a link to each driller's report, then the property's deeds matched to the likely log.">
+<meta property="og:url" content="https://palousewaterpros.com/well-log-finder.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://palousewaterpros.com/well-log-finder.html#service",
+  "name": "Well Log Lookup — Latah County, Idaho",
+  "serviceType": "Well driller's report lookup",
+  "url": "https://palousewaterpros.com/well-log-finder.html",
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "https://palousewaterpros.com/#business",
+    "name": "Palouse Water Pros",
+    "url": "https://palousewaterpros.com/",
+    "telephone": "+1-208-883-4444",
+    "address": {"@type": "PostalAddress", "addressLocality": "Moscow", "addressRegion": "ID", "addressCountry": "US"}
+  },
+  "areaServed": [
+    {"@type": "AdministrativeArea", "name": "Latah County, Idaho"}
+  ],
+  "description": "A lookup that finds the Idaho Department of Water Resources well driller's reports recorded near a Latah County, Idaho address, then matches the property's county deed records to the likely log by place, name and date. No owner names are shown."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Palouse Water Pros", "item": "https://palousewaterpros.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Well Log Lookup", "item": "https://palousewaterpros.com/well-log-finder.html"}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#43569D; --blue-deep:#35447e; --green:#96BD36; --green-deep:#56731a;
+  --grey:#36373A; --wheat:#F8F5EE; --wheat-deep:#EFE9DA; --white:#fff; --radius:14px; --max:760px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{font-family:'Source Sans 3',system-ui,sans-serif;color:var(--grey);background:var(--wheat);line-height:1.7;font-size:17.5px}
+h1,h2,h3{font-family:'Nunito',sans-serif;line-height:1.2}
+h1{font-weight:900;font-size:clamp(1.8rem,4.5vw,2.5rem);letter-spacing:-.02em;margin-bottom:.6rem}
+h2{font-weight:800;font-size:clamp(1.3rem,3vw,1.7rem);margin:2.4rem 0 .8rem}
+p{margin-bottom:1.1rem}
+a{color:var(--blue)}
+a:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.cta-band a:focus-visible{outline-color:var(--green)}
+nav{position:sticky;top:0;z-index:50;background:rgba(248,245,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--wheat-deep)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1080px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-name{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.05rem;color:var(--grey);line-height:1.05}
+.brand-name span{display:block;font-size:.62rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--blue)}
+.nav-cta{font-family:'Nunito',sans-serif;font-weight:700;font-size:.92rem;background:var(--blue);color:#fff;padding:9px 18px;border-radius:999px;text-decoration:none}
+.nav-cta:hover{background:var(--blue-deep)}
+article{max-width:var(--max);margin:0 auto;padding:56px 24px 40px}
+.eyebrow{font-family:'Nunito',sans-serif;font-weight:800;font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;color:var(--green-deep);display:block;margin-bottom:.6rem}
+.callout{background:var(--white);border-left:6px solid var(--green);border-radius:var(--radius);padding:20px 24px;margin:1.6rem 0;box-shadow:0 4px 18px rgba(54,55,58,.06)}
+ul{margin:0 0 1.1rem 1.4rem}
+li{margin-bottom:.5rem}
+.cta-band{background:var(--blue);border-radius:20px;padding:36px 32px;margin:3rem 0 1rem;color:#fff;text-align:center}
+.cta-band h2{color:#fff;margin:0 0 .6rem}
+.cta-band p{color:rgba(255,255,255,.92);max-width:34rem;margin:0 auto 1.4rem}
+.btn{display:inline-block;font-family:'Nunito',sans-serif;font-weight:800;padding:14px 30px;border-radius:999px;text-decoration:none;font-size:1rem;background:var(--green);color:#243014;margin:0 6px 8px}
+.btn:hover{background:#a7cc4d}
+.btn.alt{background:transparent;border:2px solid rgba(255,255,255,.6);color:#fff}
+footer{background:var(--grey);color:#cfd0d3;padding:36px 24px;font-size:.92rem;text-align:center}
+footer a{color:#fff}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="Palouse Water Pros home">
+      <svg width="44" height="40" viewBox="0 0 44 40" aria-hidden="true">
+        <path d="M0 34 Q 14 24 26 30 T 44 28 L 44 40 L 0 40 Z" fill="#96BD36"/>
+        <path d="M14 4 C 14 4 8 12 8 16.5 A 6 6 0 0 0 20 16.5 C 20 12 14 4 14 4 Z" fill="#43569D"/>
+        <path d="M30 10 C 30 10 25.2 16.4 25.2 20 A 4.8 4.8 0 0 0 34.8 20 C 34.8 16.4 30 10 30 10 Z" fill="#43569D" opacity=".82"/>
+      </svg>
+      <span class="brand-name">Palouse Water Pros<span>Moscow · Idaho</span></span>
+    </a>
+    <a class="nav-cta" href="index.html#contact">Contact Me</a>
+  </div>
+</nav>
+
+<article>
+  <span class="eyebrow">Tools · Well Logs</span>
+  <h1>Find the Well Log for a Latah County Property</h1>
+
+  <p>When I test a well, one of the first things I want to see is the well log: the report the driller filed with the State of Idaho when the well went in. It says how deep the well goes, how far down the casing runs, where the water stood when the well was finished, and how much it pumped. Those numbers shape a treatment design, and they are some of the first questions anyone buying a home on a well should ask. The report is public, but it is often hard to find, so I built a lookup that does the digging.</p>
+
+  <p><a class="btn" href="https://frigone-well-finder.backup-receiver.workers.dev/">Open the well log lookup</a></p>
+
+  <h2>What the lookup does</h2>
+  <p>You type an address in Latah County. The lookup places it with the county's own address map (and the county's parcel map for some town addresses), then lists the wells the state has recorded near it, nearest first. For each well you get the distance, the depth, the water level, the flow the driller measured, the tag number if the well has one, and a link to the state's own list of documents for that well, where the scanned driller's report is one tap away.</p>
+  <p>It starts at 1,000 feet from the address, then widens to half a mile and then a mile, and stops once it has three wells or at a mile. Wells the state pinned to the same point are grouped together, so a cluster of old logs reads as one spot on the map rather than a pile of near-identical cards.</p>
+  <p>Under that list, it does the homework a title search would. It reads the county's deed records for the property, back through earlier sales and through the parcel it was split from, and scores the state's logs recorded around it: by place (inside the property's lines, or in its own 40-acre square), by name (the name on the log against the names in the deeds), and by date (drilled during that person's years on the land). It shows three to five likely logs with the reasons for each, or it says plainly that no state record matches.</p>
+
+  <h2>Why a well log is hard to find</h2>
+  <p>The Idaho Department of Water Resources keeps the reports, and its Well Construction Search lists its own ways to search in the order they work best. Searching by the well's address comes fourth of six. Out in the country, many logs give directions instead of a house number, so an address search often comes back empty even when the log exists.</p>
+  <p>The deeper problem is that the state and the county file things differently. The state files a log under the well's place on the survey grid, usually down to a 40-acre square, and under the name of whoever had the well drilled. Latah County files the property under a parcel number, with its acres and a legal description, and keeps the deeds. The two records don't share a key. Land also gets split and sold after a well goes in, so the log for a house can sit under a name nobody on today's deed has heard of. Matching them means walking the deeds back to the right year, which is what the second half of the lookup does.</p>
+
+  <h2>What it shows, and what it doesn't</h2>
+  <ul>
+    <li><strong>Wells recorded near the address, not a finding about any property.</strong> Positions are approximate. More than half of Latah County's wells are pinned to the middle of a 40-acre square rather than at the well itself, so a well can sit several hundred feet from where the map puts it, and the nearest well on the list may be a neighbor's.</li>
+    <li><strong>No owner's name.</strong> The names in the deeds are compared inside the lookup and never shown. The state's scanned log may name the owner at the time it was drilled; the lookup links to the state's copy and never repeats it.</li>
+    <li><strong>Older wells are thin on the ground.</strong> The state's records are most complete from mid-1987 on, and some older wells were never logged at all. The metal tag numbers started in 1997, so an older well usually has none.</li>
+    <li><strong>It doesn't say which well is on the property.</strong> That takes the log itself and a look at the well: the casing size and the depth on the report should match what is in the ground.</li>
+  </ul>
+
+  <div class="callout">
+    <strong>Check at home:</strong> walk out to the well and look on the casing, the pipe that sticks up out of the ground, for a small metal tag stamped with a D and seven digits. Write the number down. The state's own search finds a log by its tag faster than by anything else, and the lookup shows each well's tag, so a match on the tag settles which log is the one.
+  </div>
+
+  <h2>Why it asks for an email</h2>
+  <p>The results open with a 6-digit code sent to your email. There's no password and no account, and after the code the lookup stays open on that browser for 30 days. I keep the email and a count of how many lookups it has made, so I can see how the tool is being used. I never sell the email or use it for marketing, nothing about the addresses you look up is kept with it, and I delete it if you ask. The details are on the <a href="privacy.html">privacy page</a>.</p>
+  <p>The addresses themselves aren't kept. The lookup reads public records for one property at a time and counts lookups by nearest town, with no email attached.</p>
+
+  <h2>After you find the log</h2>
+  <p>A well log tells you how the well was built. It doesn't tell you what's in the water today. If the depth, the casing or the water level raise questions, or you're buying a place on a well, the next step is a water test. I test on-site, in front of you, and design treatment around the actual numbers. The <a href="buying-a-home-with-a-well-latah-county.html">home-buying checklist for Latah County wells</a> walks through what to ask and which tests to order, and the <a href="palouse-well-water-guide.html">Palouse well water guide</a> explains why wells around here run high in iron and manganese. Not sure what you're dealing with? <a href="water-quiz.html">Take the 2-minute water quiz</a>, or see what happens on a <a href="water-testing-moscow-idaho.html">testing visit</a>.</p>
+
+  <div class="cta-band">
+    <h2>Found the log and want to know what's in the water?</h2>
+    <p>Call or text and tell me what the log says and what you're seeing. I'll come test the water on-site and give you a straight answer about what it needs.</p>
+    <a class="btn" href="sms:+19494566889">Text Trent</a>
+    <a class="btn alt" href="tel:+12088834444">Call (208) 883-4444</a>
+  </div>
+  <p>Back to the <a href="index.html">home page</a> or <a href="index.html#contact">get in touch</a>.</p>
+</article>
+
+<footer>
+  <p><a href="index.html">Palouse Water Pros</a> · Moscow, Idaho · <a href="index.html#service-area">Serving Latah County &amp; the Idaho Palouse</a><br><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a> · © 2026 Palouse Water Pros. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

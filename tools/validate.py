@@ -38,6 +38,7 @@ FAMILY = {
     "sulfur-smell-well-water-moscow-idaho.html": "landing",
     "reverse-osmosis-drinking-water-moscow-idaho.html": "landing",
     "water-testing-moscow-idaho.html": "landing",
+    "well-log-finder.html": "landing",
     "faq.html": "landing-plus",  # landing CSS plus its own <details> rules
     ARTICLE_TEMPLATE: "article",
     "how-to-read-a-well-water-test-idaho.html": "article",

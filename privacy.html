@@ -124,12 +124,13 @@ footer a{color:#fff}
   <p>This website collects nothing about you unless you use its well-log lookup, described in the next section. It has no accounts, and no analytics or advertising tools. The site is hosted by GitHub and loads its fonts from Google; like any web host, they may see basic technical details of a visit, such as your internet (IP) address, under their own privacy policies.</p>
 
   <h2>The well-log lookup</h2>
-  <p>The site has one form: a lookup that finds the state&rsquo;s well driller&rsquo;s reports (well logs) recorded near an address. It asks for two things and nothing else.</p>
+  <p>The site has one form: a lookup that finds the state&rsquo;s well driller&rsquo;s reports (well logs) recorded near an address. It asks for two things, and a third only if you use its call-back box.</p>
   <ul>
-    <li><strong>The address you type.</strong> It goes to our own lookup server, which uses it to look up public records: Latah County&rsquo;s address and parcel maps, the Idaho Department of Water Resources&rsquo; map of wells, and, if those cannot place the address, the US Census Bureau&rsquo;s address finder. We do not keep the address after the lookup, except as a count of how many lookups were made.</li>
-    <li><strong>Your email, for a one-time code.</strong> Before it shows results, the lookup emails you a short code to type in. We keep your email to count how many lookups each email makes, and to reach you back if you asked us to. We never sell it or share it for marketing, and we delete it if you ask.</li>
+    <li><strong>The address you type.</strong> It goes to our own lookup server, which uses it to look up public records: Latah County&rsquo;s address and parcel maps and deed records, the Idaho Department of Water Resources&rsquo; map of wells, and, if the county&rsquo;s maps cannot place the address, the US Census Bureau&rsquo;s address finder. We do not keep the address after the lookup. What we keep is a count: one more lookup for the email that opened the results, and one more for the nearest town that month, with no email beside the town.</li>
+    <li><strong>Your email, for a one-time code.</strong> Before it shows results, the lookup emails you a 6-digit code to type in. We keep your email, how many lookups and property checks it has made, and when it was first and last used, so we can see how the lookup is used and notice if one email is making a great many. Nothing about the addresses you look up is kept with your email. We never sell it or use it for marketing, and we delete it if you ask; deleting it also ends the cookie below.</li>
+    <li><strong>Your name and phone number, only if you use the call-back box.</strong> When the lookup page shows a box to ask for a call, the name and number you type go to us so we can call you back, and for nothing else. We do not text that number, add it to a list, or sell it, and we delete it if you ask.</li>
   </ul>
-  <p>Once you have entered the code, the lookup may keep one cookie on your device so it does not ask for a new code every time. The cookie only says the code was entered; it holds no address. The lookup keeps the county&rsquo;s public records for a property for up to a week, so a second lookup does not ask the county again; they are not tied to you or your email. The results are public records, and the lookup never shows a property owner&rsquo;s name. The lookup runs on a server we rent from Cloudflare, and the code is sent through our email service.</p>
+  <p>Once you have entered the code, the lookup keeps one cookie on your device for 30 days so it does not ask for a new code every time. The cookie says the code was entered and which count a lookup adds to, by a number rather than your email; it holds no address. You can end it at any time with &ldquo;Forget this browser&rdquo; on the lookup page. The lookup keeps the county&rsquo;s public records for a property for up to a week, so a second lookup does not ask the county again; they are not tied to you or your email. The results are public records, and the lookup never shows a property owner&rsquo;s name. The lookup runs on a server we rent from Cloudflare, and the code is emailed through Resend, an email delivery service.</p>
 
   <h2>Why we collect it</h2>
   <ul>
@@ -146,6 +147,7 @@ footer a{color:#fff}
     <li>QuickBooks, for estimates, invoices and payments.</li>
     <li>Our phone and texting service, which carries our calls and texts.</li>
     <li>Our email service.</li>
+    <li>For the well-log lookup only: Cloudflare, which runs the lookup, and Resend, which sends its one-time code.</li>
     <li>The service that stores our own job and bookkeeping records.</li>
     <li>A water-testing lab, when your water needs a lab test. The lab gets the sample and what it needs to report the result.</li>
   </ul>
