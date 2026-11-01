@@ -37,8 +37,9 @@ the `prefers-reduced-motion` guard on `scroll-behavior`.
 
 - Owner-operator: Trent. First-person voice. Based in Moscow, Idaho. Former
   general contractor who did a lot of plumbing.
-- Call **(208) 883-4444** → `tel:+12088834444`. Text **(949) 456-6889** →
-  `sms:+19494566889`. Email info@palousewaterpros.com. No other numbers.
+- Call or text **(208) 883-4444**: calls → `tel:+12088834444`, texts →
+  `sms:+12088834444`. One number takes both (since 31 Oct 2026); there is no
+  separate text number. Email info@palousewaterpros.com. No other numbers.
 - Service area: Latah County and the Idaho side of the Palouse only. Towns:
   Moscow, Viola, Troy, Deary, Bovill, Helmer, Genesee, Kendrick, Juliaetta,
   Princeton, Potlatch, Harvard. **Never claim Washington or Pullman.** The quiz

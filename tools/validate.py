@@ -4,7 +4,7 @@
 Checks every *.html page for: well-formed markup, exactly one <h1>, lang and
 viewport, title and meta-description length, canonical and og:url matching the
 filename, og:image, valid JSON-LD, internal links and anchors that resolve,
-consistent phone numbers, no Washington-side service claims, no prices or
+one phone number for calls and texts, no Washington-side service claims, no prices or
 turnaround promises, and CSS that matches the page family's template. Also
 checks that sitemap.xml lists every page and only real pages.
 
@@ -21,8 +21,17 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 
 SITE = "https://palousewaterpros.com/"
-CALL = "tel:+12088834444"
-TEXT = "sms:+19494566889"
+# One business line takes calls and texts (since 31 Oct 2026). No other numbers.
+PHONE = "2088834444"
+CALL = "tel:+1" + PHONE
+TEXT = "sms:+1" + PHONE
+# Any phone number written anywhere in a page: links, scripts, JSON-LD, copy.
+PHONE_PATTERN = re.compile(
+    r"(?:tel|sms):\+?[\d-]{10,}"      # tel:+12088834444, sms:+1...
+    r"|\(\d{3}\)\s?\d{3}-\d{4}"       # (208) 883-4444
+    r"|\+1-\d{3}-\d{3}-\d{4}"         # +1-208-883-4444
+    r"|\"\+1\d{10}\""                 # "+12088834444" in a script constant
+)
 
 # Page families share a <style> block byte-for-byte with their template.
 LANDING_TEMPLATE = "princeton-potlatch-water-treatment.html"
@@ -152,13 +161,16 @@ def check_page(name, html, all_files, ids_by_file):
             issues.append(f"missing anchor {href}")
 
     if name in JS_PHONE_PAGES:
-        if 'PHONE_TEL = "+12088834444"' not in html or 'PHONE_SMS = "+19494566889"' not in html:
+        if f'PHONE_TEL = "+1{PHONE}"' not in html or f'PHONE_SMS = "+1{PHONE}"' not in html:
             issues.append("quiz phone constants changed")
     else:
         if CALL not in html or TEXT not in html:
             issues.append("missing call or text link")
         for other in set(re.findall(r'href="((?:tel|sms):[^"?]+)', html)) - {CALL, TEXT}:
             issues.append(f"unexpected phone link {other}")
+    for number in sorted(set(PHONE_PATTERN.findall(html))):
+        if re.sub(r"\D", "", number)[-10:] != PHONE:
+            issues.append(f"unexpected phone number {number}")
 
     text = strip_code(html)
     if name not in BANNED_EXEMPT:
